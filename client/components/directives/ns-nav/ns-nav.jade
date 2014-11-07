@@ -1,0 +1,19 @@
+.navbar.navbar-default(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(data-toggle='collapse', data-target='#bs-navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') MEANr Template
+
+    .collapse.navbar-collapse#bs-navbar-collapse
+      ul.nav.navbar-nav.navbar-right(ng-hide='email')
+        li: a(ui-sref='home') Home
+        li: a(ui-sref='register') Register
+        li: a(ui-sref='login') Login
+      ul.nav.navbar-nav.navbar-right(ng-show='email')
+        li: a(ui-sref='home') Home
+        li: a(ui-sref='logout') {{email}}
+
