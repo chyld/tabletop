@@ -8,8 +8,59 @@ h4 {{mode | uppercase}}
         input.form-control#name(type='text', name='name', ng-model='character.name', required)
       .form-group
         label(for='class') Class
-        input.form-control#class(type='select', name='class', ng-model='character.class', required)
+        select.form-control#class(type='select', name='class', ng-model='character.class', required)
+          option(value='barbarian', name='barbarian', selected) Barbarian
+          option(value='bard', name='bard', selected) Bard
+          option(value='cleric', name='cleric', selected) Cleric
+          option(value='druid', name='druid', selected) Druid
+          option(value='fighter', name='fighter', selected) Fighter
+          option(value='monk', name='monk', selected) Monk
+          option(value='paladin', name='paladin', selected) Paladin
+          option(value='ranger', name='ranger', selected) Ranger
+          option(value='wizard', name='wizard', selected) Wizard
+      .form-group
+        label(for='race') Race
+        select.form-control#race(type='select', name='race', ng-model='character.race', required)
+          option(value='human', name='human', selected) Human
+          option(value='elf', name='elf', selected) Elf
+          option(value='dwarf', name='dwarf', selected) Dwarf
+          option(value='halfling', name='halfling', selected) Halfling
+          option(value='half-elf', name='half-elf', selected) Half Elf
+          option(value='half-org', name='half-org', selected) Half Orc
+          option(value='gnome', name='gnome', selected) Gnome
+      .form-group
+        button.btn.btn-primary(ng-click='genStats()') Generate Stats
       .form-group
         button.btn.btn-primary(ng-click='submit()') Submit
-  .col-xs-9
+  .col-xs-3
+    table
+      thead
+        td
+        td Score
+        td Modifier
+      tr
+        td Strength
+        td 0
+        td 0
+      tr
+        td Dexterity
+        td 0
+        td 0
+      tr
+        td Constitution
+        td 0
+        td 0
+      tr
+        td Intelligence
+        td 0
+        td 0
+      tr
+        td Wisdom
+        td 0
+        td 0
+      tr
+        td Charisma
+        td 0
+        td 0
+  .col-xs-3
 
