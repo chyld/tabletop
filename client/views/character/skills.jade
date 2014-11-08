@@ -1,46 +1,93 @@
-//
-  appraise 
-  balance 
-  bluff
-  climb 
-  concentr
-  craft 
-  decipher
-  diplomacy 
-  disable device
-  disguise (
-  escape artist 
-  forgery (U
-  gather information
-  handle animal
-  heal
-  hide
-  intimidate
-  jump 
-  knowledge arcana 
-  knowledge architecture 
-  knowledge dungeoneering
-  knowledge geography 
-  knowledge history 
-  knowledge local 
-  knowlege nature
-  knowlege nobilty 
-  knowledge religion  
-  knowledge planes
-  listen 
-  move silently 
-  open lock
-  perform 
-  profession  
-  ride 
-  search 
-  sense motive
-  sleight of hand 
-  speak language   
-  spellcraft 
-  spot 
-  survival 
-  swim 
-  tumble   
-  use magic device   
-  use rope
+label Skill Points
+input(type='number' disabled ng-model='skillPoints')
+.skillInput
+  label appraise:
+  input(type='number' min=0 max=25 ng-model='character.skills.appraise' ng-change='assignSkillPoints("appraise")' ng-init="character.skills.appraise=0")
+  label balance:
+  input(type='number' min=0 max=25 ng-model='character.skills.balance' ng-change='assignSkillPoints("balance")' ng-init="character.skills.balance=0")
+  label bluff:
+  input(type='number' min=0 max=25 ng-model='character.skills.bluff' ng-change='assignSkillPoints("bluff")' ng-init="character.skills.bluff=0")
+  label climb:
+  input(type='number' min=0 max=25 ng-model='character.skills.climb' ng-change='assignSkillPoints("climb")' ng-init="character.skills.climb=0")
+  label concentr:
+  input(type='number' min=0 max=25 ng-model='character.skills.concentr' ng-change='assignSkillPoints("concentr")' ng-init="character.skills.concentr=0")
+  label craft:
+  input(type='number' min=0 max=25 ng-model='character.skills.craft' ng-change='assignSkillPoints("craft")' ng-init="character.skills.craft=0")
+  label decipher:
+  input(type='number' min=0 max=25 ng-model='character.skills.decipher' ng-change='assignSkillPoints("decipher")' ng-init="character.skills.decipher=0")
+  label diplomacy:
+  input(type='number' min=0 max=25 ng-model='character.skills.diplomacy' ng-change='assignSkillPoints("diplomacy")' ng-init="character.skills.diplomacy=0")
+  label disable device:
+  input(type='number' min=0 max=25 ng-model='character.skills.disableDevice' ng-change='assignSkillPoints("disableDevice")' ng-init="character.skills.disableDevice=0")
+  label disguise:
+  input(type='number' min=0 max=25 ng-model='character.skills.disguise' ng-change='assignSkillPoints("disguise")' ng-init="character.skills.disguise=0")
+  label escape artist:
+  input(type='number' min=0 max=25 ng-model='character.skills.escapeArtist' ng-change='assignSkillPoints("escapeArtist")' ng-init="character.skills.escapeArtist=0")
+  label forgery:
+  input(type='number' min=0 max=25 ng-model='character.skills.forgery' ng-change='assignSkillPoints("forgery")' ng-init="character.skills.forgery=0")
+  label gather information:
+  input(type='number' min=0 max=25 ng-model='character.skills.gatherInformation' ng-change='assignSkillPoints("gatherInformation")' ng-init="character.skills.gatherInformation=0")
+  label handle animal:
+  input(type='number' min=0 max=25 ng-model='character.skills.handleAnimal' ng-change='assignSkillPoints("handleAnimal")' ng-init="character.skills.handleAnimal=0")
+  label heal:
+  input(type='number' min=0 max=25 ng-model='character.skills.heal' ng-change='assignSkillPoints("heal")' ng-init="character.skills.heal=0")
+  label hide:
+  input(type='number' min=0 max=25 ng-model='character.skills.hide' ng-change='assignSkillPoints("hide")' ng-init="character.skills.hide=0")
+  label intimidate:
+  input(type='number' min=0 max=25 ng-model='character.skills.intimidate' ng-change='assignSkillPoints("intimidate")' ng-init="character.skills.intimidate=0")
+  label jump:
+  input(type='number' min=0 max=25 ng-model='character.skills.jump' ng-change='assignSkillPoints("jump")' ng-init="character.skills.jump=0")
+  label knowledge arcana:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeArcana' ng-change='assignSkillPoints("knowledgeArcana")' ng-init="character.skills.knowledgeArcana=0")
+  label knowledge architecture:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeArchitecture' ng-change='assignSkillPoints("knowledgeArchitecture")' ng-init="character.skills.knowledgeArchitecture=0")
+  label knowledge dungeoneering:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeDungeoneering' ng-change='assignSkillPoints("knowledgeDungeoneering")' ng-init="character.skills.knowledgeDungeoneering=0")
+  label knowledge geography:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeGeography' ng-change='assignSkillPoints("knowledgeGeography")' ng-init="character.skills.knowledgeGeography=0")
+  label knowledge history:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeHistory' ng-change='assignSkillPoints("knowledgeHistory")' ng-init="character.skills.knowledgeHistory=0")
+  label knowledge local:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeLocal' ng-change='assignSkillPoints("knowledgeLocal")' ng-init="character.skills.knowledgeLocal=0")
+  label knowlege nature:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowlegeNature' ng-change='assignSkillPoints("knowlegeNature")' ng-init="character.skills.knowlegeNature=0")
+  label knowlege nobilty:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowlegeNobilty' ng-change='assignSkillPoints("knowlegeNobilty")' ng-init="character.skills.knowlegeNobilty=0")
+  label knowledge religion:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgeReligion' ng-change='assignSkillPoints("knowledgeReligion")' ng-init="character.skills.knowledgeReligion=0")
+  label knowledge planes:
+  input(type='number' min=0 max=25 ng-model='character.skills.knowledgePlanes' ng-change='assignSkillPoints("knowledgePlanes")' ng-init="character.skills.knowledgePlanes=0")
+  label listen:
+  input(type='number' min=0 max=25 ng-model='character.skills.listen' ng-change='assignSkillPoints("listen")' ng-init="character.skills.listen=0")
+  label move silently:
+  input(type='number' min=0 max=25 ng-model='character.skills.moveSilently' ng-change='assignSkillPoints("moveSilently")' ng-init="character.skills.moveSilently=0")
+  label open lock:
+  input(type='number' min=0 max=25 ng-model='character.skills.openLock' ng-change='assignSkillPoints("openLock")' ng-init="character.skills.openLock=0")
+  label perform:
+  input(type='number' min=0 max=25 ng-model='character.skills.perform' ng-change='assignSkillPoints("perform")' ng-init="character.skills.perform=0")
+  label profession:
+  input(type='number' min=0 max=25 ng-model='character.skills.profession' ng-change='assignSkillPoints("profession")' ng-init="character.skills.profession=0")
+  label ride:
+  input(type='number' min=0 max=25 ng-model='character.skills.ride' ng-change='assignSkillPoints("ride")' ng-init="character.skills.ride=0")
+  label search:
+  input(type='number' min=0 max=25 ng-model='character.skills.search' ng-change='assignSkillPoints("search")' ng-init="character.skills.search=0")
+  label sense motive:
+  input(type='number' min=0 max=25 ng-model='character.skills.senseMotive' ng-change='assignSkillPoints("senseMotive")' ng-init="character.skills.senseMotive=0")
+  label sleight of hand:
+  input(type='number' min=0 max=25 ng-model='character.skills.sleightOfHand' ng-change='assignSkillPoints("sleightOfHand")' ng-init="character.skills.sleightOfHand=0")
+  label speak language:
+  input(type='number' min=0 max=25 ng-model='character.skills.speakLanguage' ng-change='assignSkillPoints("speakLanguage")' ng-init="character.skills.speakLanguage=0")
+  label spellcraft:
+  input(type='number' min=0 max=25 ng-model='character.skills.spellcraft' ng-change='assignSkillPoints("spellcraft")' ng-init="character.skills.spellcraft=0")
+  label spot:
+  input(type='number' min=0 max=25 ng-model='character.skills.spot' ng-change='assignSkillPoints("spot")' ng-init="character.skills.spot=0")
+  label survival:
+  input(type='number' min=0 max=25 ng-model='character.skills.survival' ng-change='assignSkillPoints("survival")' ng-init="character.skills.survival=0")
+  label swim:
+  input(type='number' min=0 max=25 ng-model='character.skills.swim' ng-change='assignSkillPoints("swim")' ng-init="character.skills.swim=0")
+  label tumble:
+  input(type='number' min=0 max=25 ng-model='character.skills.tumble' ng-change='assignSkillPoints("tumble")' ng-init="character.skills.tumble=0")
+  label use magic device:
+  input(type='number' min=0 max=25 ng-model='character.skills.useMagicDevice' ng-change='assignSkillPoints("useMagicDevice")' ng-init="character.skills.useMagicDevice=0")
+  label use rope:
+  input(type='number' min=0 max=25 ng-model='character.skills.useRope' ng-change='assignSkillPoints("useRope")' ng-init="character.skills.useRope=0")

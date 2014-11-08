@@ -4,7 +4,9 @@
   angular.module('tabletop')
   .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', function($scope, $state, $http, User, Create){
     $scope.featPoints = 2;
-
+    var maxFeatPoints = 2;
+    $scope.skillPoints = 25;
+    var maxSkillPoints = 25;
     $scope.charOptions = [
           {value: 'barbarian', label: 'Barbarian'},
           {value: 'bard', label: 'Bard'},
@@ -43,13 +45,29 @@
       {value: 'iron-will', label: 'Iron Will'}
     ];
 
-    $scope.assignPoints = function(param){
-      if($scope.featPoints === 0){
-        param = param;
+    $scope.assignFeatPoints = function(param){
+      var total = 0, o = Object.keys($scope.character.feats);
+      for(var i = 0; i < o.length; i++) {
+        total += $scope.character.feats[o[i]];
       }
-      console.log(param);
+      if(total > maxFeatPoints) {
+        total = maxFeatPoints;
+        $scope.character.feats[param]--;
+      }
+      $scope.featPoints = maxFeatPoints - total;
     };
 
+    $scope.assignSkillPoints = function(param){
+      var total = 0, o = Object.keys($scope.character.skills);
+      for(var i = 0; i < o.length; i++) {
+        total += $scope.character.skills[o[i]];
+      }
+      if(total > maxSkillPoints) {
+        $scope.character.skills[param] -=  total - maxSkillPoints;
+        total = maxSkillPoints;
+      }
+      $scope.skillPoints = maxSkillPoints - total;
+    };
 
     $scope.charClasses = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'wizard'];
     $scope.statModifiers = [['con', 'con'], ['cha', 'cha'], ['int', 'wis'], ['int', 'con'], ['str', 'str'], ['con', 'wis'], ['str', 'int'], ['dex', 'con'], ['dex', 'dex'], ['wiz', 'wiz']];
