@@ -9,7 +9,7 @@ function Character(o, userId){
   this.sex       = o.sex;
   this.charClass = o.charClass;
   this.abilities = o.abilities;
-  this.hp        = (Math.floor(Math.random() * 30) + 1) + calcMiscMods(o.abilities.con); //5d6 
+  this.hp        = (Math.floor(Math.random() * 30) + 1) + calcMiscMods(o.abilities.con);
   this.weapons   = o.weapons;
   this.armor     = o.armor;
   this.shield    = o.shield || {}; //certain classes do not get a shield
@@ -29,7 +29,7 @@ Object.defineProperty(Character, 'collection', {
 Character.create = function(character, userId, cb){
   var newCharacter = new Character(character, userId);
   //add class modifiers, reflex, save, base attack bonus, initiative, will
-  newCharacter = classModifier(newCharacter);
+  newCharacter = addExtraMods(newCharacter);
   //save to Mongo collection
   Character.collection.save(newCharacter, cb);
 };
@@ -141,3 +141,4 @@ function calcMiscMods(stat){
     return 3;
   }
 }
+
