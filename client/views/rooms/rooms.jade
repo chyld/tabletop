@@ -11,3 +11,25 @@ h4 Rooms Finder &amp; Creator
       .form-group
         button.btn.btn-primary(ng-click='submit()') Create Room
   .col-xs-9
+br
+.row
+  .col-xs-1
+  .col-xs-7
+    .formgroup
+    label Search:
+    input.form-control.search(ng-model='query')
+  .col-xs-4
+br
+.row
+  .col-xs-1
+  .col-xs-10
+    table
+      thead
+        th Room Name
+        th User Name
+
+      tbody(ng-repeat='room in rooms | filter:query')
+        tr
+          td {{room.name}}
+          td {{room.email}}
+  .col-xs-1
