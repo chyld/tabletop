@@ -1,6 +1,7 @@
 #roomsWrapper.container
   h3#roomh3 Rooms Finder &amp; Creator
   .row
+    .col-xs-1
     .col-xs-3
       form(role='form', novalidate, name='userForm')
         .form-group
@@ -11,7 +12,7 @@
           input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
         .form-group
           button.btn.btn-primary(ng-click='submit()') Create Room
-    .col-xs-9
+    .col-xs-8
 br
 .row
   .col-xs-3
