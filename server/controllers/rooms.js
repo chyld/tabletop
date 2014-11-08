@@ -20,3 +20,9 @@ exports.join = function(req, res){
     res.send({isAuthenticated:isAuthenticated});
   });
 };
+
+exports.get = function(req, res){
+  Room.findById(req.params.roomId, function(err, room){
+    res.send({room: room});
+  });
+};
