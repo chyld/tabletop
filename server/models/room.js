@@ -33,6 +33,19 @@ Room.create = function(user, o, cb){
   });
 };
 
+Room.destroy = function(id, userId, cb){
+  id = Mongo.ObjectID(id);
+  userId = Mongo.ObjectID(userId);
+
+  Room.collection.findOne({_id:id, userId:userId}, function(err, room){
+    if(room){
+      Room.collection.remove({_id:id}, cb);
+    } else {
+      cb();
+    }
+  });
+};
+
 Room.all = function(cb){
   Room.collection.find().toArray(cb);
 };

@@ -23,6 +23,7 @@
   .col-xs-10
     table
       thead
+        th
         th Room Name
         th User Name
         th
@@ -30,6 +31,8 @@
 
       tbody(ng-repeat='room in rooms | filter:query')
         tr
+          td(ng-show="room.email === email" ng-click='deleteRoom(room._id)'): img(src='/assets/bomb-icon.png')
+          td(ng-show="room.email !== email")
           td(ng-click='join=true') {{room.name}}
           td {{room.email}}
           td: input#tdInput(ng-show='join', type='password', ng-model='password', placeholder='password')
