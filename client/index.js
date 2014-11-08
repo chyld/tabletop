@@ -9,11 +9,11 @@
     .state('home',     {url:'/',         templateUrl:'/views/home/home.html'})
     .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
     .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-    .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
+    .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'})
+    .state('rooms',    {url:'/rooms',    templateUrl:'/views/rooms/rooms.html', controller:'RoomsCtrl'});
 
     $localForageProvider.config({name:'tabletop', storeName:'cache', version:1.0});
     $httpProvider.interceptors.push('HttpInterceptor');
   }])
   .run(['User', function(User){}]);
 })();
-

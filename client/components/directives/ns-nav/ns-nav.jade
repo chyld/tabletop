@@ -6,7 +6,7 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') MEANr Template
+      a.navbar-brand(href='/') Welcome to D&D Online {{email}}!
 
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-hide='email')
@@ -15,5 +15,5 @@
         li: a(ui-sref='login') Login
       ul.nav.navbar-nav.navbar-right(ng-show='email')
         li: a(ui-sref='home') Home
-        li: a(ui-sref='logout') {{email}}
-
+        li: a(ui-sref='rooms') Rooms
+        li: a(ui-sref='logout') Logout
