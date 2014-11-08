@@ -3,6 +3,7 @@
 
   angular.module('tabletop')
   .controller('UsersCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
+    $('body').css('background-image', 'url("/assets/login.jpg")');
     $('#email').focus();
     $scope.user = {};
     $scope.mode = $state.current.name;

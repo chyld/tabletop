@@ -3,6 +3,7 @@
 
   angular.module('tabletop')
   .controller('RoomsCtrl', ['$scope', '$http', '$state', 'User', function($scope, $http, $state, User){
+    $('body').css('background-image', 'url("/assets/tabletop.jpg")');
     $scope.room = {};
     $scope.rooms = [];
 
@@ -35,6 +36,7 @@
       $http.post('/rooms', $scope.room).then(function(response){
         if(response.data.room){
           $scope.rooms.push(response.data.room);
+          $scope.room = {};
         }
       });
     };
