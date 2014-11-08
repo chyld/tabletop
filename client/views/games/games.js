@@ -1,4 +1,4 @@
-/* global Boot */
+/* global Boot, Menu, Play */
 var game;
 
 (function(){
@@ -12,9 +12,16 @@ var game;
 
     //game states
     game.state.add('boot', Boot);
-    //game.state.add('menu', Menu);
+    game.state.add('menu', Menu);
+    game.state.add('play', Play);
 
     game.state.start('boot');
+
+    //get list of characters
+    //choose character
+    //
+
+
 
   }]);
 })();

@@ -7,11 +7,10 @@ function Boot(game){
 Boot.prototype = {
 
   preload: function(){
-    this.game.load.spritesheet('tilemap', '../assets/tilemaps/tilemap20x20.jpg', 20, 20);
+    this.game.load.spritesheet('tilemap', '../../assets/tilemaps/tilemap20x20.jpg', 40, 40);
   },
 
   create: function(){
-    console.log('boot menu');
-    //game.state.start('menu');
+    this.game.state.start('menu');
   }
 };
