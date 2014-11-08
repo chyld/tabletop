@@ -3,6 +3,7 @@
 
   angular.module('tabletop')
   .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', function($scope, $state, $http, User, Create){
+    $scope.featPoints = 2;
 
     $scope.charOptions = [
           {value: 'barbarian', label: 'Barbarian'},
@@ -41,6 +42,13 @@
       {value: 'endurance', label: 'Endurance'},
       {value: 'iron-will', label: 'Iron Will'}
     ];
+
+    $scope.assignPoints = function(param){
+      if($scope.featPoints === 0){
+        param = param;
+      }
+      console.log(param);
+    };
 
 
     $scope.charClasses = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'wizard'];
