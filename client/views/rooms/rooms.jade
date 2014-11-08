@@ -1,5 +1,6 @@
 .container
   .row#roomsRow
+    .col-xs-1
     .col-xs-3#formWrap
       h3#roomh3 Rooms Finder &amp; Creator
       form(role='form', novalidate, name='userForm')
@@ -11,19 +12,19 @@
           input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
         .form-group
           button.btn.btn-success(ng-click='submit()') Create Room
-    .col-xs-4
-    .col-xs-3#centerSearch
+    .col-xs-1
+    .col-xs-4#centerSearch
       .formgroup#search
         label Search:
         input.form-control.search(ng-model='query')
-    .col-xs-2
+    .col-xs-3
 
 .row
   .col-xs-1
   .col-xs-10
     table
       thead
-        th
+        th.bomb
         th Room Name
         th User Name
         th
@@ -31,7 +32,7 @@
 
       tbody(ng-repeat='room in rooms | filter:query')
         tr
-          td(ng-show="room.email === email" ng-click='deleteRoom(room._id)'): img(src='/assets/bomb-icon.png')
+          td.bomb(ng-show="room.email === email" ng-click='deleteRoom(room._id)'): img(src='/assets/bomb-icon.png')
           td(ng-show="room.email !== email")
           td(ng-click='join=true') {{room.name}}
           td {{room.email}}
