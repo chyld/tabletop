@@ -1,0 +1,15 @@
+h4 {{mode | uppercase}}
+
+.row
+  .col-xs-3
+    form(role='form', novalidate, name='charForm')
+      .form-group
+        label(for='name') Name
+        input.form-control#name(type='text', name='name', ng-model='character.name', required)
+      .form-group
+        label(for='class') Class
+        input.form-control#class(type='select', name='class', ng-model='character.class', required)
+      .form-group
+        button.btn.btn-primary(ng-click='submit()') Submit
+  .col-xs-9
+

@@ -6,10 +6,11 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('home',     {url:'/',         templateUrl:'/views/home/home.html'})
-    .state('register', {url:'/register', templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-    .state('login',    {url:'/login',    templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-    .state('logout',   {url:'/logout',   template:'',                           controller:'UsersCtrl'});
+    .state('home',       {url:'/',                 templateUrl:'/views/home/home.html'})
+    .state('register',   {url:'/register',         templateUrl:'/views/users/users.html',  controller:'UsersCtrl'})
+    .state('login',      {url:'/login',            templateUrl:'/views/users/users.html',  controller:'UsersCtrl'})
+    .state('logout',     {url:'/logout',           template:'',                            controller:'UsersCtrl'})
+    .state('charCreate', {url:'/character-create', templateUrl:'views/character/create.html', controller:'CharCtrl'});
 
     $localForageProvider.config({name:'tabletop', storeName:'cache', version:1.0});
     $httpProvider.interceptors.push('HttpInterceptor');
