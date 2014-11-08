@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('tabletop')
-  .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', function($scope, $state, $http, User, Create){
+  .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', '$location', function($scope, $state, $http, User, Create, $location){
     $scope.featPoints = 2;
     var maxFeatPoints = 2;
     $scope.skillPoints = 25;
@@ -144,21 +144,35 @@
       rollDice();
       addModifiers();
       $scope.character.abilities = $scope.charStats;
-      //console.log($scope.character);
     };
+
+    $scope.chars = [];
+
+    function saveSuccess(){
+      $location.path('/character-list');
+    }
+
+    function failure(res){
+      console.log('failed', res);
+    }
+
+    function success(res){
+      $scope.chars = res.data.list;
+      console.log(res.data);
+    }
+
+    function list(){
+      Create.getCharacters().then(success, failure);
+    }
 
     $scope.submit = function(){
-      //console.log($scope.character);
-      Create.createCharacter($scope.character).then(success, failure);
+      Create.createCharacter($scope.character).then(saveSuccess, failure);
     };
 
-    function success(){
-      console.log('saved');
+    if ($location.path() === '/character-list') {
+      list();
     }
 
-    function failure(){
-      console.log('failed');
-    }
   }]);
 })();
 

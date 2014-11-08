@@ -7,3 +7,15 @@ exports.create = function(req, res){
     res.status(200).end();
   });
 };
+
+exports.list = function(req, res){
+  Character.list(req.user._id, function(err, list){
+    res.send({list: list});
+  });
+};
+
+exports.find = function(req, res){
+  Character.findById(req.id, function(err, character){
+    res.send({character: character});
+  });
+};

@@ -35,6 +35,18 @@ Character.create = function(character, userId, cb){
   Character.collection.save(newCharacter, cb);
 };
 
+Character.list = function(id, cb){
+  var userId = Mongo.ObjectID(id);
+  Character.collection.find({userId: userId}).toArray(function(err, list){
+    cb(err, list);
+  });
+};
+
+Character.findById = function(id, cb){
+  var _id = Mongo.ObjectID(id);
+  Character.collection.findOne({_id:_id}, cb);
+};
+
 module.exports = Character;
 
 
