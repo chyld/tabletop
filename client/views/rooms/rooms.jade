@@ -35,7 +35,7 @@
 
       tbody(ng-repeat='room in rooms | filter:query')
         tr
-          td(ng-show="room.email === email" ng-click='deleteRoom(room._id)') X
+          td(ng-show="room.email === email" ng-click='deleteRoom(room._id)'): img(src='/assets/bomb-icon.png')
           td(ng-show="room.email !== email")
           td(ng-click='join=true') {{room.name}}
           td {{room.email}}
