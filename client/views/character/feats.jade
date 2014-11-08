@@ -1,90 +1,141 @@
-label Points
-input(type='number' disabled ng-model='featPoints')
 .featsInput
-  label acrobatic:    
-  input(type='number' min=0 max=2) 
-  label agile:
-  input(type='number' min=0 max=2) 
-  label alertness: 
-  input(type='number' min=0 max=2) 
-  label animal affinity:    
-  input(type='number' min=0 max=2) 
-  label armor proficiency light:    
-  input(type='number' min=0 max=2) 
-  label armor proficiency medium:   
-  input(type='number' min=0 max=2) 
-  label armor proficiency heavy:    
-  input(type='number' min=0 max=2) 
-  label athletic:   
-  input(type='number' min=0 max=2) 
-  label augment summoning: 
-  input(type='number' min=0 max=2) 
-  label combat casting:   
-  input(type='number' min=0 max=2) 
-  label deceitful:    
-  input(type='number' min=0 max=2) 
-  label deft hands:   
-  input(type='number' min=0 max=2) 
-  label diehard:    
-  input(type='number' min=0 max=2) 
-  label diligent:   
-  input(type='number' min=0 max=2) 
-  label endurance:    
-  input(type='number' min=0 max=2) 
-  label eschew materials:       
-  input(type='number' min=0 max=2) 
-  label extend spell:   
-  input(type='number' min=0 max=2) 
-  label extra turning:      
-  input(type='number' min=0 max=2) 
-  label great fortitude:    
-  input(type='number' min=0 max=2) 
-  label greater spell focus:    
-  input(type='number' min=0 max=2) 
-  label greater spell penetration:      
-  input(type='number' min=0 max=2) 
-  label improved counterspell:       
-  input(type='number' min=0 max=2) 
-  label improved turning:     
-  input(type='number' min=0 max=2) 
-  label investigator:   
-  input(type='number' min=0 max=2) 
-  label iron will:    
-  input(type='number' min=0 max=2) 
-  label leadership:   
-  input(type='number' min=0 max=2) 
-  label lightning reflexes:   
-  input(type='number' min=0 max=2) 
-  label magical aptitude:    
-  input(type='number' min=0 max=2) 
-  label martial weapon proficiency:     
-  input(type='number' min=0 max=2) 
-  label natural spell:    
-  input(type='number' min=0 max=2) 
-  label negotiator:   
-  input(type='number' min=0 max=2) 
-  label nimble fingers:   
-  input(type='number' min=0 max=2) 
-  label persuasive:      
-  input(type='number' min=0 max=2) 
-  label run:       
-  input(type='number' min=0 max=2) 
-  label self sufficient:    
-  input(type='number' min=0 max=2) 
-  label shield proficiency:    
-  input(type='number' min=0 max=2)
-  label simple weapon proficiency:    
-  input(type='number' min=0 max=2)
-  label skill focus:       
-  input(type='number' min=0 max=2) 
-  label spell focus:       
-  input(type='number' min=0 max=2) 
-  label spell penetration:    
-  input(type='number' min=0 max=2) 
-  label stealthy:
-  input(type='number' min=0 max=2) 
-  label toughness:
-  input(type='number' min=0 max=2 ng-model='character.skills.toughness' ng-change='assignPoints(character.skills.toughness)') 
-  label tower shield proficiency:
-  input(type='number' min=0 max=2 ng-model='character.skills.track' ng-change='assignPoints(ng-model=character.skills.track)') 
-
+    .row
+      .col-xs-6
+        .form-group
+          label Points
+          input(type='number' disabled ng-model='featPoints')
+      .col-xs-6
+    .row
+      .col-xs-3
+        .form-group
+          label acrobatic:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label agile:
+          input(type='number' min=0 max=2) 
+        .form-group
+          label alertness: 
+          input(type='number' min=0 max=2) 
+        .form-group
+          label animal affinity:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label armor proficiency light:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label armor proficiency medium:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label armor proficiency heavy:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label athletic:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label augment summoning: 
+          input(type='number' min=0 max=2) 
+        .form-group
+          label combat casting:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label deceitful:    
+          input(type='number' min=0 max=2) 
+      .col-xs-3
+        .form-group
+          label deft hands:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label diehard:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label diligent:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label endurance:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label eschew materials:       
+          input(type='number' min=0 max=2) 
+        .form-group
+          label extend spell:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label extra turning:      
+          input(type='number' min=0 max=2) 
+        .form-group
+          label great fortitude:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label greater spell focus:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label greater spell penetration:      
+          input(type='number' min=0 max=2) 
+        .form-group
+          label improved counterspell:       
+          input(type='number' min=0 max=2) 
+      .col-xs-3
+        .form-group
+          label improved turning:     
+          input(type='number' min=0 max=2) 
+        .form-group
+          label investigator:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label iron will:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label leadership:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label lightning reflexes:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label magical aptitude:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label martial weapon proficiency:     
+          input(type='number' min=0 max=2) 
+        .form-group
+          label natural spell:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label negotiator:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label nimble fingers:   
+          input(type='number' min=0 max=2) 
+        .form-group
+          label persuasive:      
+          input(type='number' min=0 max=2) 
+      .col-xs-3
+        .form-group
+          label run:       
+          input(type='number' min=0 max=2) 
+        .form-group
+          label self sufficient:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label shield proficiency:    
+          input(type='number' min=0 max=2)
+        .form-group
+          label simple weapon proficiency:    
+          input(type='number' min=0 max=2)
+        .form-group
+          label skill focus:       
+          input(type='number' min=0 max=2) 
+        .form-group
+          label spell focus:       
+          input(type='number' min=0 max=2) 
+        .form-group
+          label spell penetration:    
+          input(type='number' min=0 max=2) 
+        .form-group
+          label stealthy:
+          input(type='number' min=0 max=2) 
+        .form-group
+          label toughness:
+          input(type='number' min=0 max=2 ng-model='character.skills.toughness' ng-change='assignPoints(character.skills.toughness)') 
+        .form-group
+          label tower shield proficiency:
+          input(type='number' min=0 max=2 ng-model='character.skills.track' ng-change='assignPoints(ng-model=character.skills.track)') 
