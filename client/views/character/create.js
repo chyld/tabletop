@@ -5,8 +5,8 @@
   .controller('CharCtrl', ['$scope', '$state', 'User', function($scope, $state, User){
     // change charClass to be dynamic
     $scope.charClass = 'Barbarian';
-    $scope.charClasses = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Wizard'];
-    $scope.statModifiers = [['con', 'con'], ['cha', 'cha'], ['int', 'wis'], ['int', 'con'], ['str', 'str'], ['con', 'wis'], ['str', 'int'], ['dex', 'con'], ['dex', 'dex'], ['int', 'int'], ['wiz', 'wiz']];
+    $scope.charClasses = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Wizard'];
+    $scope.statModifiers = [['con', 'con'], ['cha', 'cha'], ['int', 'wis'], ['int', 'con'], ['str', 'str'], ['con', 'wis'], ['str', 'int'], ['dex', 'con'], ['dex', 'dex'], ['wiz', 'wiz']];
     $scope.statNames = ['str', 'dex', 'con', 'cha', 'int', 'wis'];
     $scope.charStats = {
       str: 0,

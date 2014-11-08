@@ -7,7 +7,7 @@ function Character(o, userId){
   this.name      = o.name;
   this.userId    = Mongo.ObjectID(userId); //recast into Mongo objectID
   this.sex       = o.sex;
-  this.class     = o.class;
+  this.charClass = o.charClass;
   this.abilities = o.abilities;
   this.hp        = o.hp;
   this.weapons   = o.weapons;
@@ -15,7 +15,6 @@ function Character(o, userId){
   this.shield    = o.shield || {}; //certain classes do not get a shield
   this.skills    = o.skills;
   this.feats     = o.feats;
-
 
   //default empty attributes
   this.money     = 100;
@@ -27,22 +26,13 @@ Object.defineProperty(Character, 'collection', {
   get: function(){return global.mongodb.collection('character');}
 });
 
-
 Character.create = function(character, userId, cb){
   var newCharacter = new Character(character, userId);
   //add class modifiers, reflex, save, base attack bonus, initiative, will
-  newCharacter = classModifier(newCharacter);
+  //newCharacter = classModifier(newCharacter);
   //save to Mongo collection
   Character.collection.save(newCharacter, cb);
 };
-
-
-function classModifier(character){
-  if(character.class === 'Barbarian'){
-    character
-  }
-}
-
 
 module.exports = Character;
 

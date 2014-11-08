@@ -7,7 +7,8 @@ var morgan         = require('morgan'),
     RedisStore     = require('connect-redis')(session),
     debug          = require('../lib/debug'),
     security       = require('../lib/security'),
-    users          = require('../controllers/users');
+    users          = require('../controllers/users'),
+    characters     = require('../controllers/character');
 
 module.exports = function(app, express){
   app.use(morgan('dev'));
@@ -25,6 +26,7 @@ module.exports = function(app, express){
   app.use(security.authenticate);
   app.use(debug.info);
   app.delete('/logout', users.logout);
+  app.post('/charCreate', characters.create);
 
   console.log('Express: Routes Loaded');
 };
