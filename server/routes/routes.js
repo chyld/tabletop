@@ -23,6 +23,7 @@ module.exports = function(app, express){
 
   app.use(security.authenticate);
   app.use(debug.info);
+
   app.delete('/logout', users.logout);
   app.post('/rooms', rooms.create);
   app.get('/rooms', rooms.index);
