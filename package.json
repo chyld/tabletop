@@ -57,6 +57,7 @@
     "grunt-jscs": "^0.8.1",
     "grunt-shell": "^1.1.1",
     "jshint-stylish": "^1.0.0",
+    "lodash": "^2.4.1",
     "mocha": "^2.0.1",
     "mocha-lcov-reporter": "0.0.1",
     "mongodb": "^1.4.19",

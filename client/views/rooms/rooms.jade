@@ -2,13 +2,39 @@ h4 Rooms Finder &amp; Creator
 
 .row
   .col-xs-3
-    form(role='form', novalidate, name='roomsForm')
+    form(role='form', novalidate, name='userForm')
       .form-group
-        label(for='name') Name
-        input.form-control#name(type='text', name='name', ng-model='room.name', autofocus)
+        label(for='name') Room Name
+        input.form-control#roomName(type='text', name='name', ng-model='room.name', autofocus)
       .form-group
         label(for='password') Password
-        input.form-control#password(type='password', name='password', ng-model='room.password')
+        input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
       .form-group
         button.btn.btn-primary(ng-click='submit()') Create Room
   .col-xs-9
+
+.row
+  .col-xs-1
+  .col-xs-7
+    .form-group
+      label Search:
+      input.form-control.search(ng-model='query')
+  .col-xs-4
+
+.row
+  .col-xs-1
+  .col-xs-10
+    table
+      thead
+        th Room Name
+        th User Name
+        th
+        th
+
+      tbody(ng-repeat='room in rooms | filter:query')
+        tr
+          td(ng-click='join=true') {{room.name}}
+          td {{room.email}}
+          td: input(ng-show='join', type='password', ng-model='password', placeholder='password')
+          td: button(ng-show='join', ng-click='joinGame()') Join Game
+  .col-xs-1
