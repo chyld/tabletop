@@ -5,19 +5,26 @@ var game;
   'use strict';
 
   angular.module('tabletop')
-  .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', function($scope, $http, $state, $stateParams, Room){
+  .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', 'User', function($scope, $http, $state, $stateParams, Room, User){
     game = new Phaser.Game(500, 320, Phaser.CANVAS, 'the-game');
 
-    //console.log(game);
-
-    Room.getRoom($stateParams.gameId).then(success, failure);
-
-    function success(res){
-      $scope.room = res.data.room;
+    $scope.email = User.getEmail();
+    if ($scope.email) {
+      getRoom();
+    } else {
+      $scope.$on('email', function(err, email){
+        if(!$scope.email){
+          $scope.email = email;
+          getRoom();
+        }
+      });
     }
 
-    function failure(){
-      console.log('failed');
+    function getRoom(){
+      Room.getRoom($stateParams.gameId).then(function(res){
+        $scope.room = res.data.room;
+        //if($scope.room.email === $scope.email)
+      });
     }
 
 
@@ -28,9 +35,6 @@ var game;
 
     game.state.start('boot');
 
-    //get list of characters
-    //choose character
-    //
 
 
 

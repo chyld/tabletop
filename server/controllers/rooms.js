@@ -23,6 +23,6 @@ exports.join = function(req, res){
 
 exports.get = function(req, res){
   Room.findById(req.params.roomId, function(err, room){
-    res.send({room: room});
+    res.send({room: room, userId: req.user.id});
   });
 };
