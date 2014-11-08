@@ -5,28 +5,44 @@
   .controller('CharCtrl', ['$scope', '$state', '$http', 'User', function($scope, $state, $http, User){
 
     $scope.charOptions = [
-          {value: 'barbarian', name: 'barbarian', label: 'Barbarian'},
-          {value: 'bard', name: 'bard', label: 'Bard'},
-          {value: 'cleric', name: 'cleric', label: 'Cleric'},
-          {value: 'druid', name: 'druid', label: 'Druid'},
-          {value: 'fighter', name: 'fighter', label: 'Fighter'},
-          {value: 'monk', name: 'monk', label: 'Monk'},
-          {value: 'paladin', name: 'paladin', label: 'Paladin'},
-          {value: 'ranger', name: 'ranger', label: 'Ranger'},
-          {value: 'wizard', name: 'wizard', label: 'Wizard'}
+          {value: 'barbarian', label: 'Barbarian'},
+          {value: 'bard', label: 'Bard'},
+          {value: 'cleric', label: 'Cleric'},
+          {value: 'druid', label: 'Druid'},
+          {value: 'fighter', label: 'Fighter'},
+          {value: 'monk', label: 'Monk'},
+          {value: 'paladin', label: 'Paladin'},
+          {value: 'ranger', label: 'Ranger'},
+          {value: 'wizard', label: 'Wizard'}
     ];
     $scope.raceOptions = [
-          {value: 'human', name: 'human', label: 'Human'},
-          {value: 'elf', name: 'elf', label: 'Elf'},
-          {value: 'dwarf', name: 'dwarf', label: 'Dwarf'},
-          {value: 'halfling', name: 'halfling', label: 'Halfling'},
-          {value: 'half-elf', name: 'half-elf', label: 'Half Elf'},
-          {value: 'half-org', name: 'half-org', label: 'Half Orc'},
-          {value: 'gnome', name: 'gnome', label: 'Gnome'}
+          {value: 'human', label: 'Human'},
+          {value: 'elf', label: 'Elf'},
+          {value: 'dwarf', label: 'Dwarf'},
+          {value: 'halfling', label: 'Halfling'},
+          {value: 'half-elf', label: 'Half Elf'},
+          {value: 'half-org', label: 'Half Orc'},
+          {value: 'gnome', label: 'Gnome'}
+    ];
+    $scope.weaponOptions = [
+      {value: 'sword', label: 'Sword'},
+      {value: 'great-sword', label: 'Great Sword'},
+      {value: 'bow', label: 'Bow'},
+      {value: 'dagger', label: 'Dagger'},
+      {value: 'staff', label: 'Staff'}
+    ];
+    $scope.armorOptions = [
+      {value: 'chain', label: 'Chain Mail'},
+      {value: 'leather', label: 'Leather Armor'},
+      {value: 'plate', label: 'Plate Armor'}
+    ];
+    $scope.featOptions = [
+      {value: 'agile', label: 'Agile'},
+      {value: 'endurance', label: 'Endurance'},
+      {value: 'iron-will', label: 'Iron Will'}
     ];
 
-    // change charClass to be dynamic
-    $scope.charClass = $scope.charOptions[1];
+
     $scope.charClasses = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'wizard'];
     $scope.statModifiers = [['con', 'con'], ['cha', 'cha'], ['int', 'wis'], ['int', 'con'], ['str', 'str'], ['con', 'wis'], ['str', 'int'], ['dex', 'con'], ['dex', 'dex'], ['wiz', 'wiz']];
     $scope.statNames = ['str', 'dex', 'con', 'cha', 'int', 'wis'];
@@ -56,7 +72,8 @@
     }
 
     function addModifiers(className){
-      var index = $scope.charClasses.indexOf($scope.charClass.value);
+      //should only be using character.charClass, not charClass.value
+      var index = $scope.charClasses.indexOf($scope.character.charClass.value);
       // change this if you change number of modifiers
 
       for(var i = 0; i < 2; i++) {
@@ -84,14 +101,27 @@
       };
     }
 
+    $scope.character = {
+      name: null,
+      sex: null,
+      charClass: $scope.charOptions[0],
+      race: null,
+      abilities: $scope.charStats,
+      weapon: null,
+      armor: null,
+      skills: null,
+      feat: null
+    };
+
     $scope.roll = function(){
       resetRoll();
       rollDice();
       addModifiers();
+      console.log($scope.character);
     };
 
     $scope.submit = function(){
-      console.log($scope);
+      console.log($scope.character);
       //$http.post('/rooms', $scope.room);
     };
   }]);

@@ -12,11 +12,20 @@ h4 {{mode | uppercase}}
           option(value='male', name='male') Male
           option(value='female', name='male') Female
       .form-group
-        label(for='class') Class
-        select.form-control#charClass(ng-model='charClass', ng-options='opt as opt.label for opt in charOptions', name='charClass', required)
-      .form-group
         label(for='race') Race
-        select.form-control#race(type='select', name='race', ng-model='character.race', required)
+        select.form-control#charClass(ng-model='character.race', ng-options='opt as opt.label for opt in raceOptions', name='race', required)
+      .form-group
+        label(for='class') Class
+        select.form-control#charClass(ng-model='character.charClass', ng-options='opt as opt.label for opt in charOptions', name='charClass', required)
+      .form-group
+        label(for='weapon') Weapon
+        select.form-control#weapon(ng-model='character.weapon', ng-options='opt as opt.label for opt in weaponOptions', name='weapon', required)
+      .form-group
+        label(for='armor') Armor
+        select.form-control#armor(ng-model='character.armor', ng-options='opt as opt.label for opt in armorOptions', name='armor', required)
+      .form-group
+        label(for='feat') Feat
+        select.form-control#feat(ng-model='character.feat', ng-options='opt as opt.label for opt in featOptions', name='feat', required)
       .form-group
         button.btn.btn-primary(ng-click='roll()') Generate Stats
       .form-group
@@ -52,4 +61,22 @@ h4 {{mode | uppercase}}
         td {{charStats.wis}}
         td {{charMods.wis}}
   .col-xs-3
-
+    table
+      thead
+        td
+        td
+      tr
+        td Race
+        td {{character.race.label}}
+      tr
+        td Class
+        td {{character.charClass.label}}
+      tr
+        td Weapon
+        td {{character.weapon.label}}
+      tr
+        td Armor
+        td {{character.armor.label}}
+      tr
+        td Feat
+        td {{character.feat.label}}
