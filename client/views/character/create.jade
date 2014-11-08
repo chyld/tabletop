@@ -7,29 +7,18 @@ h4 {{mode | uppercase}}
         label(for='name') Name
         input.form-control#name(type='text', name='name', ng-model='character.name', required)
       .form-group
+        label(for='sex') Gender
+        select.form-control#class(type='select', name='sex', ng-model='character.sex', required)
+          option(value='male', name='male') Male
+          option(value='female', name='male') Female
+      .form-group
         label(for='class') Class
-        select.form-control#class(type='select', name='class', ng-model='character.class', required)
-          option(value='barbarian', name='barbarian', selected) Barbarian
-          option(value='bard', name='bard', selected) Bard
-          option(value='cleric', name='cleric', selected) Cleric
-          option(value='druid', name='druid', selected) Druid
-          option(value='fighter', name='fighter', selected) Fighter
-          option(value='monk', name='monk', selected) Monk
-          option(value='paladin', name='paladin', selected) Paladin
-          option(value='ranger', name='ranger', selected) Ranger
-          option(value='wizard', name='wizard', selected) Wizard
+        select.form-control#charClass(ng-model='charClass', ng-options='opt as opt.label for opt in charOptions', name='charClass', required)
       .form-group
         label(for='race') Race
         select.form-control#race(type='select', name='race', ng-model='character.race', required)
-          option(value='human', name='human', selected) Human
-          option(value='elf', name='elf', selected) Elf
-          option(value='dwarf', name='dwarf', selected) Dwarf
-          option(value='halfling', name='halfling', selected) Halfling
-          option(value='half-elf', name='half-elf', selected) Half Elf
-          option(value='half-org', name='half-org', selected) Half Orc
-          option(value='gnome', name='gnome', selected) Gnome
       .form-group
-        button.btn.btn-primary(ng-click='genStats()') Generate Stats
+        button.btn.btn-primary(ng-click='roll()') Generate Stats
       .form-group
         button.btn.btn-primary(ng-click='submit()') Submit
   .col-xs-3
@@ -40,27 +29,27 @@ h4 {{mode | uppercase}}
         td Modifier
       tr
         td Strength
-        td 0
-        td 0
+        td {{charStats.str}}
+        td {{charMods.str}}
       tr
         td Dexterity
-        td 0
-        td 0
+        td {{charStats.dex}}
+        td {{charMods.dex}}
       tr
         td Constitution
-        td 0
-        td 0
+        td {{charStats.con}}
+        td {{charMods.con}}
       tr
         td Intelligence
-        td 0
-        td 0
+        td {{charStats.cha}}
+        td {{charMods.cha}}
       tr
         td Wisdom
-        td 0
-        td 0
+        td {{charStats.int}}
+        td {{charMods.int}}
       tr
         td Charisma
-        td 0
-        td 0
+        td {{charStats.wis}}
+        td {{charMods.wis}}
   .col-xs-3
 
