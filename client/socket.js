@@ -1,9 +1,11 @@
 /* global io */
 
+var socket;
+
 (function(){
   'use strict';
 
-  var socket = io.connect('/');
+  socket = io.connect('/');
 
   socket.on('online', function(){
     window.dispatchEvent(new Event('connected'));
