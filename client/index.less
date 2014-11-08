@@ -1,3 +1,120 @@
+@import url(http://fonts.googleapis.com/css?family=Bad+Script|Calligraffitti|Great+Vibes|Amatic+SC:400,700|Cinzel:400,700|Homemade+Apple|Nothing+You+Could+Do);
+
+/*
+font-family: 'Bad Script', cursive;
+font-family: 'Calligraffitti', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Amatic SC', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Homemade Apple', cursive;
+font-family: 'Nothing You Could Do', cursive;
+*/
+
+/* Main styling, background, fonts */
+body{
+  font-family: 'Cinzel', serif;
+  background-image: url('assets/dandd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+/* End Main styling, background, fonts */
+
+/* Home Page */
+#homeH1{
+  font-family: 'Cinzel', serif;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  color: white;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+/* End Home Page */
+
+
+/* Login/Register */
+#userForm{
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin-left: 30px;
+}
+
+#userH3{
+  font-weight:bold;
+  font-family: 'Cinzel', serif;
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0 100px;
+  font-weight: bold;
+  width: 320px;
+  text-align: center;
+}
+
+input.ng-invalid, select.ng-invalid{
+  background-color: @RED;
+}
+
+/* End Login/Register */
+
+/* Room Page */
+#roomh3 {
+  font-weight: bold;
+}
+
+#roomsWrapper{
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+/* End Room Page */
+
+/* Table & Filter(Search) */
+td {
+  width: 200px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+th {
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 200px;
+}
+
+table{
+  margin: 0 auto;
+}
+
+input.form-control.search {
+  width: auto;
+  margin: 0 auto;
+}
+
+#search {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+  padding: 10px 0px 15px 0px;
+}
+
+/* End Table & Filter(Search) */
+
 // http://clrs.cc/
 
 @NAVY:    #001F3F;
@@ -15,18 +132,5 @@
 @PURPLE:  #B10DC9;
 @BLACK:   #111111;
 @GRAY:    #AAAAAA;
-@SILVER:  #DDDDDD;
-
-body{
-  background-color: @YELLOW;
-}
-
-input.ng-invalid, select.ng-invalid{
-  background-color: @RED;
-}
-
-footer p{
-  padding-top: 10px;
-  color: #777;
-}
+@SILVER:  #DDDDDD;   
 
