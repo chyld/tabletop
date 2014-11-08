@@ -1,32 +1,30 @@
-#roomsWrapper.container
-  h3#roomh3 Rooms Finder &amp; Creator
-  .row
+.container
+  .row#roomsRow
     .col-xs-1
-    .col-xs-3
+    .col-xs-3#formWrap
+      h3#roomh3 Rooms Finder &amp; Creator
       form(role='form', novalidate, name='userForm')
         .form-group
-          label(for='name') Room Name
+          label#nameLabel(for='name') Room Name:
           input.form-control#roomName(type='text', name='name', ng-model='room.name', autofocus)
         .form-group
-          label(for='password') Password
+          label#passwordLabel(for='password') Password:
           input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
         .form-group
           button.btn.btn-success(ng-click='submit()') Create Room
-    .col-xs-8
-
-.row
-  .col-xs-3
-  .col-xs-6
-    .formgroup#search
-      label Search:
-      input.form-control.search(ng-model='query')
-  .col-xs-3
+    .col-xs-1
+    .col-xs-4#centerSearch
+      .formgroup#search
+        label Search:
+        input.form-control.search(ng-model='query')
+    .col-xs-3
 
 .row
   .col-xs-1
   .col-xs-10
     table
       thead
+        th.bomb
         th Room Name
         th User Name
         th
@@ -34,8 +32,10 @@
 
       tbody(ng-repeat='room in rooms | filter:query')
         tr
+          td.bomb(ng-show="room.email === email" ng-click='deleteRoom(room._id)'): img(src='/assets/bomb-icon.png')
+          td(ng-show="room.email !== email")
           td(ng-click='join=true') {{room.name}}
           td {{room.email}}
-          td: input(ng-show='join', type='password', ng-model='password', placeholder='password')
-          td: button(ng-show='join', ng-click='joinGame()') Join Game
+          td: input#tdInput(ng-show='join', type='password', ng-model='password', placeholder='password')
+          td: button.btn.btn-primary(ng-show='join', ng-click='joinGame()') Join Game
   .col-xs-1

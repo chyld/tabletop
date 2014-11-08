@@ -10,4 +10,8 @@
   img(src='../../assets/dandd.jpg')
   img(src='../../assets/dandd.jpg')
 
-#the-chat
+#the-chat(style='border:3px solid red; background-color: white; display:inline-block; width: 400px; height: 400px;')
+  .message(ng-repeat='message in messages track by $index') {{message.message}} {{message.from}}
+  
+input(type='text', ng-model='message')
+button(ng-click='sendMessage()') Send

@@ -39,5 +39,16 @@
         game.state.start('boot');
       });
     }
+
+    $scope.messages = [];
+    socket.emit('join', $stateParams);
+    socket.on('bChat', function(data){
+      $scope.messages.push(data);
+      $scope.$digest();
+    });
+
+    $scope.sendMessage = function(){
+      socket.emit('chat', {from:$scope.email, message:$scope.message, gameId:$stateParams.gameId});
+    };
   }]);
 })();

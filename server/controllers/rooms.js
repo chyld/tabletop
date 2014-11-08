@@ -26,3 +26,11 @@ exports.get = function(req, res){
     res.send({room: room, userId: req.user.id});
   });
 };
+
+exports.destroy = function(req, res){
+  Room.destroy(req.params.roomId, req.user._id, function(){
+    Room.all(function(err, rooms){
+      res.send({rooms:rooms});
+    });
+  });
+};

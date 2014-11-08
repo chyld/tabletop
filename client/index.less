@@ -11,9 +11,14 @@ font-family: 'Nothing You Could Do', cursive;
 */
 
 /* Main styling, background, fonts */
+#navStyle {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0px;
+  opacity: 0.5;
+}
+
 body{
   font-family: 'Cinzel', serif;
-  background-image: url('assets/dandd.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -34,6 +39,33 @@ body{
   padding: 0 100px;
   font-weight: bold;
 }
+.video-section .pattern-overlay {
+  background-color: rgba(71, 71, 71, 0.59);
+  padding: 110px 0 32px;
+  min-height: 496px; 
+  /* Incase of overlay problems just increase the min-height*/
+}
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-size: cover;
+  z-index: -10;
+}
+
+#homePage{
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
 /* End Home Page */
 
@@ -44,6 +76,7 @@ body{
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   margin-left: 30px;
+  padding-top: 10px;
 }
 
 #userH3{
@@ -56,23 +89,71 @@ body{
   font-weight: bold;
   width: 320px;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
 }
 
 input.ng-invalid, select.ng-invalid{
   background-color: @RED;
 }
 
+#userEmail{
+  font-size: 18px;
+}
+
+#userPassword{
+  font-size: 18px;
+}
+
+#email{
+  font-size: 15px;
+  color: black;
+}
+
+#password{
+  font-size: 15px;
+  color: black;  
+}
+
 /* End Login/Register */
 
 /* Room Page */
+#roomsRow{
+  padding-bottom: 50px;
+}
+
 #roomh3 {
   font-weight: bold;
 }
 
-#roomsWrapper{
+#formWrap{
   border: 1px solid white;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  width: 400px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+#nameLabel{
+  font-size: 18px;
+}
+
+#passwordLabel{
+  font-size: 18px;
+}
+
+#roomName{
+  width: 300px;
+  font-size: 15px;
+}
+
+#roomPassword{
+  width: 300px;
+  font-size: 15px;
 }
 
 /* End Room Page */
@@ -84,6 +165,16 @@ td {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.bomb{
+  width: 40px;
+}
+
+#tdInput{
+  color: black;
 }
 
 th {
@@ -108,9 +199,10 @@ input.form-control.search {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   text-align: center;
-  width: auto;
-  margin: 0 auto;
+  margin-right: 40px;
   padding: 10px 0px 15px 0px;
+  border: 1px solid white;
+  margin-top: 50px;
 }
 
 #the-game{ display: inline-block;}
