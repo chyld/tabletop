@@ -1,3 +1,68 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+
+body{
+  font-family: 'Oswald', sans-serif;
+  background-image: url('assets/dandd.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+
+#roomsWrapper{
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+#roomh3 {
+  font-weight: bold;
+}
+
+input.ng-invalid, select.ng-invalid{
+  background-color: @RED;
+}
+
+footer p{
+  padding-top: 10px;
+  color: #777;
+}
+
+td {
+  width: 100px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+th {
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+table{
+  margin: 0 auto;
+}
+
+input.form-control.search {
+  width: auto;
+  margin: 0 auto;
+}
+
+#search {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  width: auto;
+  margin: 0 auto;
+}
+
 // http://clrs.cc/
 
 @NAVY:    #001F3F;
@@ -15,18 +80,5 @@
 @PURPLE:  #B10DC9;
 @BLACK:   #111111;
 @GRAY:    #AAAAAA;
-@SILVER:  #DDDDDD;
-
-body{
-  background-color: @YELLOW;
-}
-
-input.ng-invalid, select.ng-invalid{
-  background-color: @RED;
-}
-
-footer p{
-  padding-top: 10px;
-  color: #777;
-}
+@SILVER:  #DDDDDD;   
 

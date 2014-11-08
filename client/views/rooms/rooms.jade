@@ -1,24 +1,25 @@
-h4 Rooms Finder &amp; Creator
-.row
-  .col-xs-3
-    form(role='form', novalidate, name='userForm')
-      .form-group
-        label(for='name') Room Name
-        input.form-control#roomName(type='text', name='name', ng-model='room.name', autofocus)
-      .form-group
-        label(for='password') Password
-        input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
-      .form-group
-        button.btn.btn-primary(ng-click='submit()') Create Room
-  .col-xs-9
+#roomsWrapper.container
+  h3#roomh3 Rooms Finder &amp; Creator
+  .row
+    .col-xs-3
+      form(role='form', novalidate, name='userForm')
+        .form-group
+          label(for='name') Room Name
+          input.form-control#roomName(type='text', name='name', ng-model='room.name', autofocus)
+        .form-group
+          label(for='password') Password
+          input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
+        .form-group
+          button.btn.btn-primary(ng-click='submit()') Create Room
+    .col-xs-9
 br
 .row
-  .col-xs-1
-  .col-xs-7
-    .formgroup
-    label Search:
-    input.form-control.search(ng-model='query')
-  .col-xs-4
+  .col-xs-3
+  .col-xs-6
+    .formgroup#search
+      label Search:
+      input.form-control.search(ng-model='query')
+  .col-xs-3
 br
 .row
   .col-xs-1
