@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('tabletop')
-  .controller('CharCtrl', ['$scope', '$state', '$http', 'User', function($scope, $state, $http, User){
+  .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', function($scope, $state, $http, User, Create){
 
     $scope.charOptions = [
           {value: 'barbarian', label: 'Barbarian'},
@@ -121,9 +121,17 @@
     };
 
     $scope.submit = function(){
-      console.log($scope.character);
-      //$http.post('/rooms', $scope.room);
+      //console.log($scope.character);
+      Create.createCharacter($scope.character).then(success, failure);
     };
+
+    function success(){
+      console.log('saved');
+    }
+
+    function failure(){
+      console.log('failed');
+    }
   }]);
 })();
 

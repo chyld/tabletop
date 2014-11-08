@@ -1,7 +1,9 @@
 'use strict';
 
-//var Character = require('../models/character');
+var Character = require('../models/character');
 
 exports.create = function(req, res){
-  console.log(req.body);
+  Character.create(req.body, req.user._id, function(err, charSaved){
+    res.status(200).end();
+  });
 };

@@ -28,8 +28,10 @@ Object.defineProperty(Character, 'collection', {
 
 Character.create = function(character, userId, cb){
   var newCharacter = new Character(character, userId);
+  console.log(userId);
+  console.log(newCharacter);
   //add class modifiers, reflex, save, base attack bonus, initiative, will
-  newCharacter = addExtraMods(newCharacter);
+  //newCharacter = addExtraMods(newCharacter);
   //save to Mongo collection
   Character.collection.save(newCharacter, cb);
 };
