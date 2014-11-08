@@ -13,6 +13,12 @@
                         $scope.email = email;
                       });
 
+                      $scope.connected = false;
+
+                      window.addEventListener('connected', function(){
+                        $scope.connected = true;
+                      });
+
                       User.getEmailFromStorage();
                     }];
     return o;

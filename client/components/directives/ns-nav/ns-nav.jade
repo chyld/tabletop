@@ -6,15 +6,16 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/') MEANr Template
+      a.navbar-brand(href='/') TableTop D&amp;D
 
     .collapse.navbar-collapse#bs-navbar-collapse
       ul.nav.navbar-nav.navbar-right(ng-hide='email')
+        li(ng-show='connected'): a(href='#') ONLINE
         li: a(ui-sref='home') Home
         li: a(ui-sref='register') Register
         li: a(ui-sref='login') Login
       ul.nav.navbar-nav.navbar-right(ng-show='email')
+        li(ng-show='connected'): a(href='#') ONLINE
         li: a(ui-sref='home') Home
         li: a(ui-sref='rooms') Rooms
         li: a(ui-sref='logout') {{email}}
-        
