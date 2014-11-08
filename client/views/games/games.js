@@ -1,11 +1,14 @@
-/* global Boot, Menu, Play */
+/* global Boot, DMMenu, PlayerMenu, DMPlay, PlayerPlay */
 
 (function(){
   'use strict';
 
   angular.module('tabletop')
   .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', 'User', function($scope, $http, $state, $stateParams, Room, User){
-    var game = new Phaser.Game(500, 320, Phaser.CANVAS, 'the-game');
+    var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'the-game');
+    $scope.$on('$destroy', function(){
+      game.destroy();
+    });
 
     $scope.email = User.getEmail();
     if ($scope.email) {
@@ -23,8 +26,8 @@
       Room.getRoom($stateParams.gameId).then(function(res){
         $scope.room = res.data.room;
 
-        var dmStates = {Boot:Boot, Menu:Menu, Play:Play},
-        playerStates = {Boot:Boot, Menu:Menu, Play:Play},
+        var dmStates = {Boot:Boot, Menu:DMMenu, Play:DMPlay},
+        playerStates = {Boot:Boot, Menu:PlayerMenu, Play:PlayerPlay},
         states = $scope.room.email === $scope.email ? dmStates : playerStates;
         console.log(states);
 
