@@ -27,6 +27,7 @@ module.exports = function(app, express){
   app.post('/rooms', rooms.create);
   app.get('/rooms', rooms.index);
   app.post('/rooms/:roomId/join', rooms.join);
+  app.delete('/rooms/:roomId', rooms.destroy);
 
   console.log('Express: Routes Loaded');
 };
