@@ -10,7 +10,7 @@ function Character(o, userId){
   this.charClass = o.charClass;
   this.abilities = o.abilities;
   this.hp        = (Math.floor(Math.random() * 30) + 1) + calcMiscMods(o.abilities.con);
-  this.weapons   = o.weapons;
+  this.weapon    = o.weapon;
   this.armor     = o.armor;
   this.shield    = o.shield || {}; //certain classes do not get a shield
   this.skills    = o.skills;
@@ -28,10 +28,9 @@ Object.defineProperty(Character, 'collection', {
 
 Character.create = function(character, userId, cb){
   var newCharacter = new Character(character, userId);
-  console.log(userId);
-  console.log(newCharacter);
   //add class modifiers, reflex, save, base attack bonus, initiative, will
   newCharacter = addExtraMods(newCharacter);
+  newCharacter = chooseWeapon(newCharacter);
   //save to Mongo collection
   Character.collection.save(newCharacter, cb);
 };
@@ -129,25 +128,40 @@ function addExtraMods(character){
     character.classSkills          = ['Summon Familiar', 'Scribe Scroll'];
     character.spellsPerDay         = {'0': 3, '1st': 1};
   }
-
   return character;
 }
 
 //this is for fortitude, will, reflex
 function calcMiscMods(stat){
   if(stat >= 12 && stat <= 13){
-    console.log('returned 1');
     return 1;
   }
   if(stat >= 14 && stat <= 15){
-    console.log('returned 2');
     return 2;
   }
   if(stat >= 16 && stat <= 17){
-    console.log('returned 3');
     return 3;
   }else{
     return 0;
   }
 }
 
+function chooseWeapon(character){
+  if(character.weapon.label === 'Sword'){
+    character.weapon = {name: 'Short Sword', damage:'1d6'};
+  }
+  if(character.weapon.label === 'Great Sword'){
+    character.weapon = {name: 'Greatsword', damage:'2d6'};
+  }
+  if(character.weapon.label === 'Dagger'){
+    character.weapon = {name: 'Dagger', damage:'1d6'};
+  }
+  if(character.weapon.label === 'Bow'){
+    character.weapon = {name: 'Longbow', damage:'1d10'};
+  }
+  if(character.weapon.label === 'Staff'){
+    character.weapon = {name: 'Staff', damage:'2d6'};
+  }
+
+  return character;
+}
