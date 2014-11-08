@@ -117,7 +117,8 @@
       resetRoll();
       rollDice();
       addModifiers();
-      console.log($scope.character);
+      $scope.character.abilities = $scope.charStats;
+      //console.log($scope.character);
     };
 
     $scope.submit = function(){
