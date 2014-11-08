@@ -20,3 +20,11 @@ exports.join = function(req, res){
     res.send({isAuthenticated:isAuthenticated});
   });
 };
+
+exports.destroy = function(req, res){
+  Room.destroy(req.params.roomId, req.user._id, function(){
+    Room.all(function(err, rooms){
+      res.send({rooms:rooms});
+    });
+  });
+};
