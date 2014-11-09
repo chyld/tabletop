@@ -1,0 +1,212 @@
+{
+	"name": "Gnoll", 
+	"hitDice": "2d8+2",
+	"minHP": 11,
+	"initiative": 0,
+	"speed": 6,
+	"baseArmor": 15,
+	"baseAttack": 1,
+	"grapple": 3,
+	"attack": {
+		"battleaxe": "1d8+2",
+		"shortbow": "1d6"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"darkvision"
+	],
+	"saves": {
+		"fort": 4,
+		"ref": 0,
+		"will": 0
+	},
+	"abilities": {
+		"str": 15,
+		"dex": 10,
+		"con": 13,
+		"int": 8,
+		"wis": 11,
+		"cha": 8
+	},
+	"skills": {
+		"listen": 2,
+		"spot": 3
+	},
+	"feats" : [
+		"powerAttack"
+	]
+
+}
+{
+	"name": "Goblin",
+	"hitDice": "1d8+1",
+	"minHP": 5,
+	"initiative": 1,
+	"speed": 6,
+	"baseArmor": 15,
+	"baseAttack": 1,
+	"grapple": -3,
+	"attack": {
+		"morningstar": "1d6",
+		"javelin": "1d4"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"darkvision"
+	],
+	"saves": {
+		"fort": 3,
+		"ref": 1,
+		"will": -1
+	},
+	"abilities": {
+		"str": 11,
+		"dex": 13,
+		"con": 12,
+		"int": 10,
+		"wis": 9,
+		"cha": 6
+	},
+	"skills": {
+		"hide": 5,
+		"listen": 2,
+		"moveSilently": 5,
+		"ride": 4,
+		"spot": 2
+	},
+	"feats": [
+		"alertness"
+	]
+}
+{
+	"name": "Kobold",
+	"hitDice": "1d8",
+	"minHP": 4,
+	"initiative": 1,
+	"speed": 6,
+	"baseArmor": 15,
+	"baseAttack": 1,
+	"grapple": -4,
+	"attack": {
+		"spear": "1d6-1",
+		"sling": "1d3"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"darkvision"
+	],
+	"saves": {
+		"fort": 2,
+		"ref": 1,
+		"will": -1
+	},
+	"abilities": {
+		"str": 9,
+		"dex": 13,
+		"con": 10,
+		"int": 10,
+		"wis": 9,
+		"cha": 8
+	},
+	"skills": {
+		"craft": {
+			"trapmaking": 2
+		},
+		"hide": 6,
+		"listen": 2,
+		"moveSilently": 2,
+		"profession": {
+			"miner": 2
+		},
+		"search": 2,
+		"spot": 2
+	},
+	"feats": [
+		"alertness"
+	]
+}
+{
+	"name": "Ogre",
+	"hitDice": "4d8+11",
+	"minHP": 29,
+	"initiative": -1,
+	"speed": 6,
+	"baseArmor": 16,
+	"baseAttack": 3,
+	"grapple": 12,
+	"attack": {
+		"greatclub": "2d8+7",
+		"javelin": "1d8+5"
+	},
+	"reach": 2,
+	"specialAttacks": null,
+	"specialQualities": [
+		"darkvision",
+		"lowLightVision"
+	],
+	"saves": {
+		"fort": 6,
+		"ref": 0,
+		"will": 1
+	},
+	"abilities": {
+		"str": 21,
+		"dex": 8,
+		"con": 15,
+		"int": 6,
+		"wis": 10,
+		"cha": 7
+	},
+	"skills": {
+		"climb": 5,
+		"listen": 2,
+		"spot": 2
+	},
+	"feats": [
+		"toughness",
+		"weaponFocus"
+	]
+}
+{
+	"name": "Skeleton",
+	"hitDice": "1d12",
+	"minHP": 6,
+	"initiative": 5,
+	"speed": 6,
+	"baseArmor": 15,
+	"baseAttack": 0,
+	"grapple": 1,
+	"attack": {
+		"scimitar": "1d6+1",
+		"claw": "1d4+1"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"damageReduction",
+		"darkvision",
+		"immuneCold",
+		"undeadTraits"
+	],
+	"saves": {
+		"fort": 0,
+		"ref": 1,
+		"will": 2
+	},
+	"abilities": {
+		"str": 13,
+		"dex": 13,
+		"con": 0,
+		"int": 0,
+		"wis": 10,
+		"cha": 1
+	},
+	"skills": {
+	},
+	"feats": [
+		"improvedInitiative"
+	]
+}
