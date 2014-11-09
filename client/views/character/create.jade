@@ -23,7 +23,7 @@
                   option(value='female', name='male') Female
               .form-group
                 label(for='race') Race
-                select.form-control#charClass(ng-model='character.race', ng-options='opt as opt.label for opt in raceOptions', name='race', required)
+                select.form-control#charClass(ng-model='character.race', ng-init='changePortrait()', ng-change='changePortrait()', ng-options='opt as opt.label for opt in raceOptions', name='race', required)
           .col-xs-4
               .form-group
                 label(for='class') Class

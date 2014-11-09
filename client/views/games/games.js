@@ -31,7 +31,6 @@
         var dmStates = {Boot:Boot, Menu:DMMenu, Play:DMPlay},
         playerStates = {Boot:Boot, Menu:PlayerMenu, Play:PlayerPlay},
         states = $scope.room.email === $scope.email ? dmStates : playerStates;
-        console.log(states);
 
         //game states
         game.state.add('boot', states.Boot);

@@ -169,6 +169,10 @@
       Create.createCharacter($scope.character).then(saveSuccess, failure);
     };
 
+    $scope.changePortrait = function(){
+      character.portrait = Create.calcCharPortrait(character);
+    };
+
     if ($location.path() === '/character-list') {
       list();
     }

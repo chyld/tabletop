@@ -15,6 +15,7 @@ function Character(o, userId){
   this.shield    = o.shield || {}; //certain classes do not get a shield
   this.skills    = o.skills;
   this.feats     = o.feats;
+  this.portrait  = o.portrait;
 
   //default empty attributes
   this.money     = 100;
@@ -177,3 +178,4 @@ function chooseWeapon(character){
 
   return character;
 }
+
