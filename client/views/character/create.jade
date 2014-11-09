@@ -1,5 +1,5 @@
 .charCreatePage
-  h4 {{mode | uppercase}}
+  h1 {{mode | uppercase}}
 
   .row
     .col-xs-6
@@ -35,56 +35,50 @@
                 label(for='armor') Armor
                 select.form-control#armor(ng-model='character.armor', ng-options='opt as opt.label for opt in armorOptions', name='armor', required)
           
-    .col-xs-3
+    .col-xs-6
       table
         thead
           td
+          td
+          td Ability
           td Score
           td Modifier
         tr
+          td Race
+          td {{character.race.label}}
           td Strength
           td {{charStats.str}}
           td {{charMods.str}}
         tr
+          td Class
+          td {{character.charClass.label}}
           td Dexterity
           td {{charStats.dex}}
           td {{charMods.dex}}
         tr
+          td Weapon
+          td {{character.weapon.label}}
           td Constitution
           td {{charStats.con}}
           td {{charMods.con}}
         tr
+          td Armor
+          td {{character.armor.label}}
           td Intelligence
           td {{charStats.cha}}
           td {{charMods.cha}}
         tr
+          td Feat
+          td {{character.feat.label}}
           td Wisdom
           td {{charStats.int}}
           td {{charMods.int}}
         tr
+          td 
+          td 
           td Charisma
           td {{charStats.wis}}
           td {{charMods.wis}}
-    .col-xs-3
-      table
-        thead
-          td
-          td
-        tr
-          td Race
-          td {{character.race.label}}
-        tr
-          td Class
-          td {{character.charClass.label}}
-        tr
-          td Weapon
-          td {{character.weapon.label}}
-        tr
-          td Armor
-          td {{character.armor.label}}
-        tr
-          td Feat
-          td {{character.feat.label}}
   .row
     .col-xs-12
       form(role='form', novalidate, name='featsForm')
