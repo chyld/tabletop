@@ -214,3 +214,86 @@
 	],
 	"portrait":"/client/assets/images/monster-portraits/skeleton.png"
 }
+{
+	"name": "Orc",
+	"hitDice": "1d8+1",
+	"minHP": 5,
+	"initiative": 0,
+	"speed": 6,
+	"baseArmor": 13,
+	"baseAttack": 1,
+	"grapple": 4,
+	"attack": {
+		"falchion": "2d4+4",
+		"javelin": "1d6+3"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"darkvision",
+		"lightSensivity"
+	],
+	"saves": {
+		"fort": 3,
+		"ref": 0,
+		"will": -2
+	},
+	"abilities": {
+		"str": 17,
+		"dex": 11,
+		"con": 12,
+		"int": 8,
+		"wis": 7,
+		"cha": 6
+	},
+	"skills": {
+		"listen": 1,
+		"spot": 1
+	},
+	"feats": [
+		"alertness"
+	],
+	"portrait":"/client/assets/images/monster-portraits/orc.png"
+}
+{
+	"name": "Zombie",
+	"hitDice": "2d12+3",
+	"minHP": 16,
+	"initiative": 0,
+	"speed": 6,
+	"baseArmor": 13,
+	"baseAttack": 1,
+	"grapple": -4,
+	"attack": {
+		"spear": "1d6-1",
+		"slam": "1d4-1",
+		"lightCrossbow": "1d6"
+	},
+	"reach": 1,
+	"specialAttacks": null,
+	"specialQualities": [
+		"singleAction",
+		"darkvision",
+		"damageReduction"
+		"undeadTraits"
+	],
+	"saves": {
+		"fort": 0,
+		"ref": 0,
+		"will": 3
+	},
+	"abilities": {
+		"str": 8,
+		"dex": 11,
+		"con": 0,
+		"int": 0,
+		"wis": 10,
+		"cha": 1
+	},
+	"skills": {
+	},
+	"feats": [
+		"toughness"
+	],
+	"portrait":"/client/assets/images/monster-portraits/zombie.png"
+}
