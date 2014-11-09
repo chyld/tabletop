@@ -10,3 +10,9 @@
     div
       button.btn.btn-success#sendMessage(ng-click='sendMessage()') Send
   .col-xs-8
+    .form-group(ng-hide='isDM || hideReady')
+      .col-xs-10
+        select.form-control(name='characterId', ng-model='characterId', ng-options='c._id as c.name for c in characters')
+          option(value='') Select Character
+      .col-xs-2
+        button.btn.btn-primary(ng-click='playerReady()') Player Ready

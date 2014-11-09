@@ -2,16 +2,16 @@
   .row#roomsRow
     .col-xs-1
     .col-xs-3#formWrap
-      h3#roomh3 Rooms Finder &amp; Creator
+      h3#roomh3 Dungeon Creator
       form(role='form', novalidate, name='userForm')
         .form-group
-          label#nameLabel(for='name') Room Name:
+          label#nameLabel(for='name') Dungeon Name:
           input.form-control#roomName(type='text', name='name', ng-model='room.name', autofocus)
         .form-group
           label#passwordLabel(for='password') Password:
           input.form-control#roomPassword(type='password', name='password', ng-model='room.password')
         .form-group
-          button.btn.btn-success(ng-click='submit()') Create Room
+          button.btn.btn-success(ng-click='submit()') Create Dungeon
     .col-xs-1
     .col-xs-4#centerSearch
       .formgroup#search
@@ -25,8 +25,8 @@
     table
       thead
         th.bomb
-        th Room Name
-        th User Name
+        th Dungeon Name
+        th Dungeon Master
         th
         th
 
