@@ -11,7 +11,7 @@ function Character(o, userId){
   this.abilities = o.abilities;
   this.hp        = (Math.floor(Math.random() * 30) + 1) + calcMiscMods(o.abilities.con);
   this.weapon    = o.weapon;
-  this.armor     = o.armor;
+  this.armor     = calcArmor(o.armor.label);
   this.shield    = o.shield || {}; //certain classes do not get a shield
   this.skills    = o.skills;
   this.feats     = o.feats;
@@ -140,7 +140,9 @@ function addExtraMods(character){
     character.abilities.init       = Math.floor(Math.random() * 20 + 1) + calcMiscMods(character.abilities.dex);
     character.classSkills          = ['Summon Familiar', 'Scribe Scroll'];
     character.spellsPerDay         = {'0': 3, '1st': 1};
+    character.spells               = [{name: 'Mage Armor', property: '+4 Armor Bonus'}, {name: 'Magic Missile' , property: '1d4+1'}];
   }
+
   return character;
 }
 
@@ -177,5 +179,33 @@ function chooseWeapon(character){
   }
 
   return character;
+}
+
+function calcArmor(armor){
+  var armorStats = {};
+  if(armor === 'Robe'){
+    armorStats.shieldBonus       = 1;
+    armorStats.maxDexBonus       = 8;
+    armorStats.armorCheckPenalty = 0;
+    armorStats.spellFail         = 0;
+  }
+  if(armor === 'Leather Armor'){
+    armorStats.shieldBonus       = 2;
+    armorStats.maxDexBonus       = 6;
+    armorStats.armorCheckPenalty = 0;
+    armorStats.spellFail         = 0.1;
+  }
+  if(armor === 'Chain Mail'){
+    armorStats.shieldBonus       = 5;
+    armorStats.maxDexBonus       = 2;
+    armorStats.armorCheckPenalty = -5;
+    armorStats.spellFail         = 0.3;
+  }
+  if(armor === 'Plate Armor'){
+    armorStats.shieldBonus       = 8;
+    armorStats.maxDexBonus       = 1;
+    armorStats.armorCheckPenalty = -6;
+    armorStats.spellFail         = 0.35;
+  }
 }
 

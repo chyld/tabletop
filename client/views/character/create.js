@@ -35,6 +35,7 @@
       {value: 'staff', label: 'Staff'}
     ];
     $scope.armorOptions = [
+      {value: 'robe', label: 'Robe'},
       {value: 'chain', label: 'Chain Mail'},
       {value: 'leather', label: 'Leather Armor'},
       {value: 'plate', label: 'Plate Armor'}
