@@ -274,7 +274,7 @@
 	"specialQualities": [
 		"singleAction",
 		"darkvision",
-		"damageReduction"
+		"damageReduction",
 		"undeadTraits"
 	],
 	"saves": {
