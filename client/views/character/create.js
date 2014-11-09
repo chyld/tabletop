@@ -160,7 +160,6 @@
     function removeEmpty(obj){
       var selection = [],
           value;
-      console.log(obj);
       Object.keys(obj).forEach(function(item){
         value = obj[item];
         if (value > 0) {
