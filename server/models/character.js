@@ -8,11 +8,11 @@ function Character(o, userId){
   this.userId    = Mongo.ObjectID(userId); //recast into Mongo objectID
   this.sex       = o.sex;
   this.charClass = o.charClass;
+  this.race      = o.race;
   this.abilities = o.abilities;
   this.hp        = (Math.floor(Math.random() * 30) + 1) + calcMiscMods(o.abilities.con);
   this.weapon    = o.weapon;
   this.armor     = o.armor;
-  this.shield    = o.shield || {}; //certain classes do not get a shield
   this.skills    = o.skills;
   this.feats     = o.feats;
 

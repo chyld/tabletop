@@ -1,17 +1,68 @@
 .charListPage
   h1 Character List Page
-  ul(ng-repeat="character in chars")
-    li {{character.name}}
-    li {{character.sex}}
-    li {{character.charClass}}
-    li {{character.race}}
-    li {{character.hp}}
-    li {{character.abilities}}
-    li {{character.skills}}
-    li {{character.feats}}
-    li {{character.weapon}}
-    li {{character.armor}}
-    li {{character.shield}}
-    li {{character.money}}
-    li {{character.inventory}}
-    li {{character.classSkills}}
+  ul(ng-repeat="c in chars")
+    a(ui-sref='charCreate', ng-hide='c') Create a Character
+    table(ng-show='c')
+      tr
+        td Race
+        td {{c.race.label}}
+        td Strength
+        td {{c.abilities.str}}
+      tr
+        td Class
+        td {{c.charClass.label}}
+        td Dexterity
+        td {{c.abilities.dex}}
+      tr
+        td Race
+        td {{c.race.label}}
+        td Constitution
+        td {{c.abilities.con}}
+      tr
+        td Weapon
+        td {{c.weapon.name + ': ' + c.weapon.damage}}
+        td Intelligence
+        td {{c.abilities.int}}
+      tr
+        td Armor
+        td {{c.armor.label}}
+        td Wisdom
+        td {{c.abilities.wis}}
+      tr
+        td Feats
+        td
+          select(ng-options='opt as opt.label for opt in c.feats', ng-model='c.feats')
+        td Charisma
+        td {{c.abilities.cha}}
+      tr
+        td Skills
+        td 
+          select(ng-options='opt as opt.label for opt in c.skills', ng-model='c.skills')
+        td Base Attack Bonus
+        td {{c.abilities.bab}}
+      tr
+        td Class Skill 1 
+        td {{c.classSkills[0]}} 
+        td Fortitude
+        td {{c.abilities.fortitude}}
+      tr
+        td Class Skill 2 
+        td {{c.classSkills[1]}} 
+        td Will
+        td {{c.abilities.will}}
+      tr
+        td Class Skill 3 
+        td {{c.classSkills[2]}} 
+        td Reflex
+        td {{c.abilities.reflex}}
+      tr
+        td Money
+        td {{c.money}}
+        td Initiative
+        td {{c.abilities.init}}
+      tr
+        td Inventory
+        td 
+          select(ng-options='opt as opt.label for opt in c.inventory', ng-model='c.inventory')
+        td
+        td
