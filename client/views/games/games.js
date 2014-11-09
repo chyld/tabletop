@@ -4,7 +4,7 @@
   'use strict';
 
   angular.module('tabletop')
-  .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', 'User', function($scope, $http, $state, $stateParams, Room, User){
+  .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', 'User', 'Create', function($scope, $http, $state, $stateParams, Room, User, Create){
     $('body').css('background-image', 'url("/assets/dandd.jpg")');
     var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'the-game');
 
@@ -24,9 +24,26 @@
       });
     }
 
+    $scope.characters = [];
+    $scope.heros = [];
+    Create.getCharacters().then(function(response){
+      $scope.characters = response.data.list;
+    });
+
+    $scope.playerReady = function(){
+      socket.emit('ready', {gameId:$stateParams.gameId, characterId:$scope.characterId});
+    };
+
+    socket.on('bReady', function(data){
+      $scope.heros.push(data.characterId);
+      $scope.hideReady = true;
+      $scope.$digest();
+    });
+
     function startGame(){
       Room.getRoom($stateParams.gameId).then(function(res){
         $scope.room = res.data.room;
+        $scope.isDM = $scope.room.email === $scope.email;
 
         var dmStates = {Boot:Boot, Menu:DMMenu, Play:DMPlay},
         playerStates = {Boot:Boot, Menu:PlayerMenu, Play:PlayerPlay},
