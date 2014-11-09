@@ -137,7 +137,7 @@
       weapon: null,
       armor: null,
       skills: null,
-      feat: null
+      feats: null
     };
 
     $scope.roll = function(){
@@ -157,9 +157,28 @@
       console.log('failed', res);
     }
 
+    function removeEmpty(obj){
+      var selection = [],
+          value;
+      console.log(obj);
+      Object.keys(obj).forEach(function(item){
+        value = obj[item];
+        if (value > 0) {
+          selection.push({label: item + ': ' + value, value: item + ': ' + value});
+        }
+      });
+      if (selection < 1) {
+        selection = [{label: 'none', value: 'none'}];
+      }
+      return selection;
+    }
+
     function success(res){
-      $scope.chars = res.data.list;
-      console.log(res.data);
+      $scope.chars = res.data.list.map(function(obj){
+        obj.skills = removeEmpty(obj.skills);
+        obj.feats = removeEmpty(obj.feats);
+        return obj;
+      });
     }
 
     function list(){
