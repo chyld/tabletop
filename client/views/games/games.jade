@@ -1,17 +1,12 @@
-#the-game
-
-#portraits
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-  img(src='../../assets/dandd.jpg')
-
-#the-chat(style='border:3px solid red; background-color: white; display:inline-block; width: 400px; height: 400px;')
-  .message(ng-repeat='message in messages track by $index') {{message.message}} {{message.from}}
-  
-input(type='text', ng-model='message')
-button(ng-click='sendMessage()') Send
+.row
+  .col-xs-4
+    #the-chat
+      .message(ng-repeat='message in messages track by $index') {{message.from}} : {{message.message}}
+  .col-xs-8
+    #the-game
+.row
+  .col-xs-4
+    textarea#messageInput(name='playerMessages', cols='30', rows='4', ng-model='message')
+    div
+      button.btn.btn-success#sendMessage(ng-click='sendMessage()') Send
+  .col-xs-8

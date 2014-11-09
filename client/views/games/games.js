@@ -5,7 +5,9 @@
 
   angular.module('tabletop')
   .controller('GamesCtrl', ['$scope', '$http', '$state', '$stateParams', 'Room', 'User', function($scope, $http, $state, $stateParams, Room, User){
+    $('body').css('background-image', 'url("/assets/dandd.jpg")');
     var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'the-game');
+
     $scope.$on('$destroy', function(){
       game.destroy();
     });
@@ -49,6 +51,7 @@
 
     $scope.sendMessage = function(){
       socket.emit('chat', {from:$scope.email, message:$scope.message, gameId:$stateParams.gameId});
+      $scope.message = '';
     };
   }]);
 })();
