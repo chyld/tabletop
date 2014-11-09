@@ -7,9 +7,8 @@ function Menu(game){
 
 Menu.prototype = {
   create: function(){
-    console.log('create');
-    var bg = this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'tilemap', 3);
-
+   this.game.add.tileSprite(0, 0, this.game.width, this.game.height, 'tilemap', 3);
+   this.game.state.start('play');
   }
 };
 
@@ -18,12 +17,7 @@ function DMMenu(game){
 }
 
 DMMenu.prototype = {
-  create: Menu.prototype.create,
-
-  update: function(){
-    console.log('DM');
-  }
-
+  create: Menu.prototype.create
 };
 
 function PlayerMenu(game){
@@ -31,10 +25,5 @@ function PlayerMenu(game){
 }
 
 PlayerMenu.prototype = {
-  create: Menu.prototype.create,
-
-  update: function(){
-    console.log('Player');
-  }
-
+  create: Menu.prototype.create
 };
