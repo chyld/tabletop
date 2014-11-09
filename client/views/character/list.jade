@@ -1,8 +1,8 @@
 .charListPage
-  h1 Character List Page
+  h1#list Character List
   ul(ng-repeat="c in chars")
     a(ui-sref='charCreate', ng-hide='c') Create a Character
-    table(ng-show='c')
+    table#charTable(ng-show='c')
       tr
         td Race
         td {{c.race.label}}

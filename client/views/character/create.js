@@ -3,6 +3,7 @@
 
   angular.module('tabletop')
   .controller('CharCtrl', ['$scope', '$state', '$http', 'User', 'Create', '$location', function($scope, $state, $http, User, Create, $location){
+    $('body').css('background-image', 'url("/assets/20sided.jpg")');
     $scope.featPoints = 2;
     var maxFeatPoints = 2;
     $scope.skillPoints = 25;
