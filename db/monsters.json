@@ -35,8 +35,8 @@
 	},
 	"feats" : [
 		"powerAttack"
-	]
-
+	],
+	"portrait":"/client/assets/images/monster-portraits/gnoll.png"
 }
 {
 	"name": "Goblin",
@@ -78,7 +78,8 @@
 	},
 	"feats": [
 		"alertness"
-	]
+	],
+	"portrait":"/client/assets/images/monster-portraits/goblin.png"
 }
 {
 	"name": "Kobold",
@@ -126,7 +127,8 @@
 	},
 	"feats": [
 		"alertness"
-	]
+	],
+	"portrait":"/client/assets/images/monster-portraits/kobold.png"
 }
 {
 	"name": "Ogre",
@@ -168,7 +170,8 @@
 	"feats": [
 		"toughness",
 		"weaponFocus"
-	]
+	],
+	"portrait":"/client/assets/images/monster-portraits/ogre.png"
 }
 {
 	"name": "Skeleton",
@@ -208,5 +211,6 @@
 	},
 	"feats": [
 		"improvedInitiative"
-	]
+	],
+	"portrait":"/client/assets/images/monster-portraits/skeleton.png"
 }
