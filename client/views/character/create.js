@@ -170,7 +170,8 @@
     };
 
     $scope.changePortrait = function(){
-      character.portrait = Create.calcCharPortrait(character);
+      $scope.character.portrait = Create.calcCharPortrait($scope.character);
+      console.log($scope.character.portrait);
     };
 
     if ($location.path() === '/character-list') {
