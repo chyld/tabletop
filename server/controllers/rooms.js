@@ -21,6 +21,12 @@ exports.join = function(req, res){
   });
 };
 
+exports.get = function(req, res){
+  Room.findById(req.params.roomId, function(err, room){
+    res.send({room: room, userId: req.user.id});
+  });
+};
+
 exports.destroy = function(req, res){
   Room.destroy(req.params.roomId, req.user._id, function(){
     Room.all(function(err, rooms){

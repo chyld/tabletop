@@ -1,0 +1,96 @@
+.charCreatePage
+  h4 {{mode | uppercase}}
+
+  .row
+    .col-xs-6
+      form(role='form', novalidate, name='charform')
+        .row
+          .col-xs-4
+              .form-group
+                button.btn.btn-primary(ng-click='roll()') Generate Stats
+              .form-group
+                button.btn.btn-primary(ng-click='submit()') Submit
+              .form-group
+                a(ui-sref='charList') Character List
+          .col-xs-4
+              .form-group
+                label(for='name') Name
+                input.form-control#name(type='text', name='name', ng-model='character.name', required)
+              .form-group
+                label(for='sex') Gender
+                select.form-control#class(type='select', name='sex', ng-model='character.sex', required)
+                  option(value='male', name='male') Male
+                  option(value='female', name='male') Female
+              .form-group
+                label(for='race') Race
+                select.form-control#charClass(ng-model='character.race', ng-options='opt as opt.label for opt in raceOptions', name='race', required)
+          .col-xs-4
+              .form-group
+                label(for='class') Class
+                select.form-control#charClass(ng-model='character.charClass', ng-options='opt as opt.label for opt in charOptions', name='charClass', required)
+              .form-group
+                label(for='weapon') Weapon
+                select.form-control#weapon(ng-model='character.weapon', ng-options='opt as opt.label for opt in weaponOptions', name='weapon', required)
+              .form-group
+                label(for='armor') Armor
+                select.form-control#armor(ng-model='character.armor', ng-options='opt as opt.label for opt in armorOptions', name='armor', required)
+          
+    .col-xs-3
+      table
+        thead
+          td
+          td Score
+          td Modifier
+        tr
+          td Strength
+          td {{charStats.str}}
+          td {{charMods.str}}
+        tr
+          td Dexterity
+          td {{charStats.dex}}
+          td {{charMods.dex}}
+        tr
+          td Constitution
+          td {{charStats.con}}
+          td {{charMods.con}}
+        tr
+          td Intelligence
+          td {{charStats.cha}}
+          td {{charMods.cha}}
+        tr
+          td Wisdom
+          td {{charStats.int}}
+          td {{charMods.int}}
+        tr
+          td Charisma
+          td {{charStats.wis}}
+          td {{charMods.wis}}
+    .col-xs-3
+      table
+        thead
+          td
+          td
+        tr
+          td Race
+          td {{character.race.label}}
+        tr
+          td Class
+          td {{character.charClass.label}}
+        tr
+          td Weapon
+          td {{character.weapon.label}}
+        tr
+          td Armor
+          td {{character.armor.label}}
+        tr
+          td Feat
+          td {{character.feat.label}}
+  .row
+    .col-xs-12
+      form(role='form', novalidate, name='featsForm')
+        .form-group
+          include feats.jade
+    .col-xs-12
+      form(role='form', novalidate, name='skillsForm')
+        .form-group
+          include skills.jade

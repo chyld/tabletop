@@ -6,12 +6,14 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-    .state('home',     {url:'/',               templateUrl:'/views/home/home.html',   controller:'HomeCtrl'})
-    .state('register', {url:'/register',       templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-    .state('login',    {url:'/login',          templateUrl:'/views/users/users.html', controller:'UsersCtrl'})
-    .state('logout',   {url:'/logout',         template:'',                           controller:'UsersCtrl'})
-    .state('rooms',    {url:'/rooms',          templateUrl:'/views/rooms/rooms.html', controller:'RoomsCtrl'})
-    .state('games',    {url:'/games/{gameId}', templateUrl:'/views/games/games.html', controller:'GamesCtrl'});
+    .state('home',       {url:'/',                 templateUrl:'/views/home/home.html',       controller:'HomeCtrl'})
+    .state('register',   {url:'/register',         templateUrl:'/views/users/users.html',     controller:'UsersCtrl'})
+    .state('login',      {url:'/login',            templateUrl:'/views/users/users.html',     controller:'UsersCtrl'})
+    .state('logout',     {url:'/logout',           template:'',                               controller:'UsersCtrl'})
+    .state('rooms',      {url:'/rooms',            templateUrl:'/views/rooms/rooms.html',     controller:'RoomsCtrl'})
+    .state('games',      {url:'/games/{gameId}',   templateUrl:'/views/games/games.html',     controller:'GamesCtrl'})
+    .state('charCreate', {url:'/character-create', templateUrl:'views/character/create.html', controller:'CharCtrl'})
+    .state('charList',   {url:'/character-list',   templateUrl:'views/character/list.html',   controller:'CharCtrl'});
 
     $localForageProvider.config({name:'tabletop', storeName:'cache', version:1.0});
     $httpProvider.interceptors.push('HttpInterceptor');
